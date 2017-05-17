@@ -7,6 +7,7 @@
 # @Software: PyCharm
 
 #原地交换两个数字
+import math
 
 x,y = 10,20
 print(x,y)
@@ -104,6 +105,36 @@ print(sorted(student_objects, key=attrgetter('age')))
 
 print(sorted(student_objects, key=attrgetter('grade', 'age')))
 #[('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12)]
+
+def displayNumType(num):
+    print(num,'is')
+    if isinstance(num,(int,float,complex)):
+        print('a number of type:',type(num).__name__)
+    else:
+        print('not a number at all!!')
+
+displayNumType(-69)
+displayNumType(-692.3)
+displayNumType(3+3j)
+displayNumType('11')
+
+print(1/2)
+print(1.0/2.0)
+print(4//3)
+print(4**2)
+print(pow(4,2))
+print(abs(-41))
+
+print(math.pi)
+print("int",int(math.pi))
+print("round",round(math.pi))
+print("floor",math.floor(math.pi))
+for eachNum in range(10):
+    print("eachNum = ",eachNum)
+    print(round(math.pi, eachNum))
+
+
+
 
 if __name__ =="__main__":
     print("first method")
