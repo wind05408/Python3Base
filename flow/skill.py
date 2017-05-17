@@ -81,11 +81,30 @@ print(Shapes.Triangle)
 print(Shapes.Quadrangle)
 
 
+class Student:
+    def __init__(self, name, grade, age):
+        self.name = name
+        self.grade = grade
+        self.age = age
+
+    def __repr__(self):
+        return repr((self.name, self.grade, self.age))
+
+student_objects = [
+    Student('john', 'A', 15),
+    Student('jane', 'B', 12),
+    Student('dave', 'B', 10)]
 
 
+print(sorted(student_objects, key=lambda student: student.age))
 
+from operator import attrgetter
+print(sorted(student_objects, key=attrgetter('age')))
+#[('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
 
+print(sorted(student_objects, key=attrgetter('grade', 'age')))
+#[('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12)]
 
-
-
+if __name__ =="__main__":
+    print("first method")
 
